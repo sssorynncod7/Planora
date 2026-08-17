@@ -1,0 +1,2 @@
+import { resetPassword } from '@/lib/actions/auth';
+export default function Page(){return <main className="grid min-h-screen place-items-center p-6"><form action={resetPassword} className="w-full max-w-md space-y-4 rounded-3xl border p-8"><h1 className="text-3xl font-bold">Reset password</h1><input name="email" type="email" placeholder="Email" className="w-full rounded-2xl border bg-transparent p-3"/><button className="w-full rounded-2xl bg-indigo-600 p-3 text-white">Send reset link</button></form></main>}
