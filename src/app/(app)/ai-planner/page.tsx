@@ -1,0 +1,4 @@
+import { generatePlan } from '@/lib/actions/planner';
+import { Card } from '@/components/ui/card';
+async function planAction(formData: FormData) { 'use server'; return generatePlan(String(formData.get('goal') ?? '')); }
+export default function Page(){return <div className="space-y-6"><h1 className="text-3xl font-bold">AI Planner</h1><Card><form action={planAction} className="space-y-4"><textarea name="goal" placeholder="Learn Excel in 3 months" className="min-h-32 w-full rounded-2xl border bg-transparent p-4"/><button className="rounded-2xl bg-indigo-600 px-5 py-3 font-medium text-white">Generate milestones</button></form><p className="mt-4 text-sm text-zinc-500">The server action is ready to connect to an AI provider and currently returns deterministic milestone scaffolding.</p></Card></div>}
